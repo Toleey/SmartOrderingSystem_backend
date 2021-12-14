@@ -34,4 +34,21 @@
     </trim>
   </insert>
 
+  <insert id="submitItems" parameterType="Item">
+
+  </insert>
+
+  <insert id="submitAnOrder" parameterType="Order">
+    INSERT INTO sos_order (userId,fetchMealCode,price,createdTime)
+    VALUES (#{userId},#{fetchMealCode},#{price},#{createdTime});
+  </insert>
+
+  <select id="selectFetchMealCode" parameterType="Integer" resultType="Integer">
+    SELECT fetchMealCode FROM sos_order WHERE fetchMealCode = #{fetchMealCode}
+  </select>
+
+  <select id="getAllOrders" resultType="Order">
+    SELECT * FROM sos_order
+  </select>
+
 </mapper>

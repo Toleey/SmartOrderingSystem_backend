@@ -34,4 +34,8 @@
     </trim>
   </insert>
 
+  <insert id="submitItems" parameterType="Item">
+    INSERT
+  </insert>
+
 </mapper>

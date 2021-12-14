@@ -1,6 +1,9 @@
 package com.toleey.smartorderingsystem.dao;
 
+import com.toleey.smartorderingsystem.pojo.Item;
 import com.toleey.smartorderingsystem.pojo.Order;
+
+import java.util.List;
 
 public interface OrderMapper {
     /**
@@ -18,4 +21,15 @@ public interface OrderMapper {
      * @mbggenerated
      */
     int insertSelective(Order record);
+
+    public Integer submitItems(List<Item> itemList);
+
+    public Integer submitAnOrder(Order order);
+
+    //查询取餐码是否重复了
+    public Integer selectFetchMealCode(Integer fetchMealCode);
+
+    //查询全部订单
+    public List<Order> getAllOrders();
+
 }
